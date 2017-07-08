@@ -1,0 +1,466 @@
+
+################################################################################
+## configurations.
+################################################################################
+
+## conpile tool chain for linux makefile.
+# arm-linux-gnueabihf- or arm-none-linux-gnueabi- tool chain
+OPTION_CC_GNUEABIHF = 1
+LOCAL_CFLAGS += -DOPTION_CC_GNUEABIHF=$(OPTION_CC_GNUEABIHF)
+OPTION_CC_GNUEABI   = 2
+LOCAL_CFLAGS += -DOPTION_CC_GNUEABI=$(OPTION_CC_GNUEABI)
+OPTION_CC_AARCH64   = 3
+LOCAL_CFLAGS += -DOPTION_CC_AARCH64=$(OPTION_CC_AARCH64)
+########## option for os config. ##########
+OPTION_OS_ANDROID = 1
+LOCAL_CFLAGS += -DOPTION_OS_ANDROID=$(OPTION_OS_ANDROID)
+OPTION_OS_LINUX   = 2
+LOCAL_CFLAGS += -DOPTION_OS_LINUX=$(OPTION_OS_LINUX)
+
+########## option for os version config. ##########
+OPTION_OS_VERSION_ANDROID_4_2 = 1
+LOCAL_CFLAGS += -DOPTION_OS_VERSION_ANDROID_4_2=$(OPTION_OS_VERSION_ANDROID_4_2)
+OPTION_OS_VERSION_ANDROID_4_4 = 2
+LOCAL_CFLAGS += -DOPTION_OS_VERSION_ANDROID_4_4=$(OPTION_OS_VERSION_ANDROID_4_4)
+OPTION_OS_VERSION_ANDROID_5_0 = 3
+LOCAL_CFLAGS += -DOPTION_OS_VERSION_ANDROID_5_0=$(OPTION_OS_VERSION_ANDROID_5_0)
+OPTION_OS_VERSION_ANDROID_6_0 = 4
+LOCAL_CFLAGS += -DOPTION_OS_VERSION_ANDROID_6_0=$(OPTION_OS_VERSION_ANDROID_6_0)
+
+########## option for momory driver config. ##########
+OPTION_MEMORY_DRIVER_SUNXIMEM = 1
+LOCAL_CFLAGS += -DOPTION_MEMORY_DRIVER_SUNXIMEM=$(OPTION_MEMORY_DRIVER_SUNXIMEM)
+OPTION_MEMORY_DRIVER_ION      = 2
+LOCAL_CFLAGS += -DOPTION_MEMORY_DRIVER_ION=$(OPTION_MEMORY_DRIVER_ION)
+
+########## option for product config. ##########
+OPTION_PRODUCT_PAD      = 1
+LOCAL_CFLAGS += -DOPTION_PRODUCT_PAD=$(OPTION_PRODUCT_PAD)
+OPTION_PRODUCT_TVBOX    = 2
+LOCAL_CFLAGS += -DOPTION_PRODUCT_TVBOX=$(OPTION_PRODUCT_TVBOX)
+OPTION_PRODUCT_OTT_CMCC = 3
+LOCAL_CFLAGS += -DOPTION_PRODUCT_OTT_CMCC=$(OPTION_PRODUCT_OTT_CMCC)
+OPTION_PRODUCT_IPTV     = 4
+LOCAL_CFLAGS += -DOPTION_PRODUCT_IPTV=$(OPTION_PRODUCT_IPTV)
+OPTION_PRODUCT_DVB      = 5
+LOCAL_CFLAGS += -DOPTION_PRODUCT_DVB=$(OPTION_PRODUCT_DVB)
+
+########## option for chip config. ##########
+OPTION_CHIP_1623 = 1
+LOCAL_CFLAGS += -DOPTION_CHIP_1623=$(OPTION_CHIP_1623)
+OPTION_CHIP_1625 = 2
+LOCAL_CFLAGS += -DOPTION_CHIP_1625=$(OPTION_CHIP_1625)
+OPTION_CHIP_1633 = 3
+LOCAL_CFLAGS += -DOPTION_CHIP_1633=$(OPTION_CHIP_1633)
+OPTION_CHIP_1651 = 4
+LOCAL_CFLAGS += -DOPTION_CHIP_1651=$(OPTION_CHIP_1651)
+OPTION_CHIP_1650 = 5
+LOCAL_CFLAGS += -DOPTION_CHIP_1650=$(OPTION_CHIP_1650)
+OPTION_CHIP_1661 = 6
+LOCAL_CFLAGS += -DOPTION_CHIP_1661=$(OPTION_CHIP_1661)
+OPTION_CHIP_1667 = 7
+LOCAL_CFLAGS += -DOPTION_CHIP_1667=$(OPTION_CHIP_1667)
+OPTION_CHIP_1639 = 8
+LOCAL_CFLAGS += -DOPTION_CHIP_1639=$(OPTION_CHIP_1639)
+OPTION_CHIP_1673 = 9
+LOCAL_CFLAGS += -DOPTION_CHIP_1673=$(OPTION_CHIP_1673)
+OPTION_CHIP_1680 = 10
+LOCAL_CFLAGS += -DOPTION_CHIP_1680=$(OPTION_CHIP_1680)
+OPTION_CHIP_1681 = 11
+LOCAL_CFLAGS += -DOPTION_CHIP_1681=$(OPTION_CHIP_1681)
+OPTION_CHIP_1689 = 12
+LOCAL_CFLAGS += -DOPTION_CHIP_1689=$(OPTION_CHIP_1689)
+OPTION_CHIP_1701 = 13
+LOCAL_CFLAGS += -DOPTION_CHIP_1701=$(OPTION_CHIP_1701)
+OPTION_CHIP_1663 = 14
+LOCAL_CFLAGS += -DOPTION_CHIP_1663=$(OPTION_CHIP_1663)
+OPTION_CHIP_1708 = 15
+LOCAL_CFLAGS += -DOPTION_CHIP_1708=$(OPTION_CHIP_1708)
+OPTION_CHIP_1718 = 16
+LOCAL_CFLAGS += -DOPTION_CHIP_1718=$(OPTION_CHIP_1718)
+
+########## option for dram interface. ##########
+OPTION_DRAM_INTERFACE_DDR1_16BITS = 1
+LOCAL_CFLAGS += -DOPTION_DRAM_INTERFACE_DDR1_16BITS=$(OPTION_DRAM_INTERFACE_DDR1_16BITS)
+OPTION_DRAM_INTERFACE_DDR1_32BITS = 2
+LOCAL_CFLAGS += -DOPTION_DRAM_INTERFACE_DDR1_32BITS=$(OPTION_DRAM_INTERFACE_DDR1_32BITS)
+OPTION_DRAM_INTERFACE_DDR2_16BITS = 3
+LOCAL_CFLAGS += -DOPTION_DRAM_INTERFACE_DDR2_16BITS=$(OPTION_DRAM_INTERFACE_DDR2_16BITS)
+OPTION_DRAM_INTERFACE_DDR2_32BITS = 4
+LOCAL_CFLAGS += -DOPTION_DRAM_INTERFACE_DDR2_32BITS=$(OPTION_DRAM_INTERFACE_DDR2_32BITS)
+OPTION_DRAM_INTERFACE_DDR3_16BITS = 5
+LOCAL_CFLAGS += -DOPTION_DRAM_INTERFACE_DDR3_16BITS=$(OPTION_DRAM_INTERFACE_DDR3_16BITS)
+OPTION_DRAM_INTERFACE_DDR3_32BITS = 6
+LOCAL_CFLAGS += -DOPTION_DRAM_INTERFACE_DDR3_32BITS=$(OPTION_DRAM_INTERFACE_DDR3_32BITS)
+OPTION_DRAM_INTERFACE_DDR3_64BITS = 7
+LOCAL_CFLAGS += -DOPTION_DRAM_INTERFACE_DDR3_64BITS=$(OPTION_DRAM_INTERFACE_DDR3_64BITS)
+
+########## option for cmcc ##########
+OPTION_CMCC_NO  = 0
+LOCAL_CFLAGS += -DOPTION_CMCC_NO=$(OPTION_CMCC_NO)
+OPTION_CMCC_YES = 1
+LOCAL_CFLAGS += -DOPTION_CMCC_YES=$(OPTION_CMCC_YES)
+
+########## option for dtv ##########
+OPTION_DTV_NO  = 0
+LOCAL_CFLAGS += -DOPTION_DTV_NO=$(OPTION_DTV_NO)
+OPTION_DTV_YES = 1
+LOCAL_CFLAGS += -DOPTION_DTV_YES=$(OPTION_DTV_YES)
+
+########## option for is_camera_decoder ##########
+OPTION_IS_CAMERA_DECODER_NO  = 0
+LOCAL_CFLAGS += -DOPTION_IS_CAMERA_DECODER_NO=$(OPTION_IS_CAMERA_DECODER_NO)
+OPTION_IS_CAMERA_DECODER_YES = 1
+LOCAL_CFLAGS += -DOPTION_IS_CAMERA_DECODER_YES=$(OPTION_IS_CAMERA_DECODER_YES)
+
+########## option for ve ipc ##########
+OPTION_VE_IPC_DISABLE  = 1
+LOCAL_CFLAGS += -DOPTION_VE_IPC_DISABLE=$(OPTION_VE_IPC_DISABLE)
+OPTION_VE_IPC_ENABLE = 2
+LOCAL_CFLAGS += -DOPTION_VE_IPC_ENABLE=$(OPTION_VE_IPC_ENABLE)
+
+########## option for FPGA board ##########
+OPTION_FPGA_BOARD_DISABLE  = 1
+LOCAL_CFLAGS += -DOPTION_FPGA_BOARD_DISABLE=$(OPTION_FPGA_BOARD_DISABLE)
+OPTION_FPGA_BOARD_ENABLE = 2
+LOCAL_CFLAGS += -DOPTION_FPGA_BOARD_ENABLE=$(OPTION_FPGA_BOARD_ENABLE)
+
+#############################################################################
+############################## configuration. ############################### 
+#############################################################################
+CONFIG_CC = $(OPTION_CC_GNUEABI)
+CONFIG_OS = $(OPTION_OS_ANDROID)
+CONFIG_OS_VERSION = $(OPTION_OS_VERSION_ANDROID_6_0)
+CONFIG_MEMORY_DRIVER = $(OPTION_MEMORY_DRIVER_ION)
+CONFIG_PRODUCT = $(OPTION_PRODUCT_PAD)
+CONFIG_CHIP = $(OPTION_CHIP_1673)
+CONFIG_DRAM_INTERFACE = $(OPTION_DRAM_INTERFACE_DDR3_32BITS)
+CONFIG_VE_IPC = $(OPTION_VE_IPC_DISABLE)
+CONFIG_CMCC = $(OPTION_CMCC_NO)
+CONFIG_DTV = $(OPTION_DTV_NO)
+CONFIG_FPGA_BOARD = $(OPTION_FPGA_BOARD_ENABLE)
+CONFIG_IS_CAMERA_DECODER = $(OPTION_IS_CAMERA_DECODER_NO)
+ifdef TARGET_BUSINESS_PLATFORM  
+    ifeq (cmccwasu , $(TARGET_BUSINESS_PLATFORM))
+        CONFIG_CMCC = $(OPTION_CMCC_YES)
+    endif
+endif
+
+########## configure CONFIG_CC ##########
+LOCAL_CFLAGS += -DCONFIG_CC=$(CONFIG_CC)
+
+########## configure CONFIG_OS ##########
+LOCAL_CFLAGS += -DCONFIG_OS=$(CONFIG_OS)
+
+########## configure CONFIG_MEMORY_DRIVER ##########
+LOCAL_CFLAGS += -DCONFIG_MEMORY_DRIVER=$(CONFIG_MEMORY_DRIVER)
+
+########## configure CONFIG_PRODUCT ##########
+LOCAL_CFLAGS += -DCONFIG_PRODUCT=$(CONFIG_PRODUCT)
+
+#ifdef ($(SW_CHIP_PLATFORM)) #ifdef SW_CHIP_PLATFORM
+#    CONFIG_PRODUCT = $(OPTION_PRODUCT_TVBOX)
+#else
+#    CONFIG_PRODUCT = $(OPTION_PRODUCT_PAD)
+#endif
+
+########## configure CONFIG_DRAM_INTERFACE ##########
+LOCAL_CFLAGS += -DCONFIG_DRAM_INTERFACE=$(CONFIG_DRAM_INTERFACE)
+
+########## configure CONFIG_VE_IPC ##########
+LOCAL_CFLAGS += -DCONFIG_VE_IPC=$(CONFIG_VE_IPC)
+
+########## configure CONFIG_IS_CAMERA_DECODER ##########
+LOCAL_CFLAGS += -DCONFIG_IS_CAMERA_DECODER=$(CONFIG_IS_CAMERA_DECODER)
+
+########## configure CONFIG_CMCC ##########
+LOCAL_CFLAGS += -DCONFIG_CMCC=$(CONFIG_CMCC)
+
+########## configure CONFIG_DTV ##########
+LOCAL_CFLAGS += -DCONFIG_DTV=$(CONFIG_DTV)
+
+#$(warning "SW_CHIP_PLATFORM:"$(SW_CHIP_PLATFORM))
+#$(warning "PLATFORM_VERSION:"$(PLATFORM_VERSION)) 
+#$(warning "TARGET_PRODUCT:"$(TARGET_PRODUCT))
+
+########## configure CONFIG_CHIP ##########
+ifeq ($(CONFIG_OS), $(OPTION_OS_ANDROID))
+    ifdef SW_CHIP_PLATFORM
+        ifeq (A80, $(SW_CHIP_PLATFORM))
+            CONFIG_CHIP = $(OPTION_CHIP_1639)
+        else ifeq (H8, $(SW_CHIP_PLATFORM))
+            CONFIG_CHIP = $(OPTION_CHIP_1673)
+        else ifeq (H3, $(SW_CHIP_PLATFORM))
+            CONFIG_CHIP = $(OPTION_CHIP_1680)
+        else ifeq (H64, $(SW_CHIP_PLATFORM))
+            CONFIG_CHIP = $(OPTION_CHIP_1689)
+        else ifeq (V40, $(SW_CHIP_PLATFORM))
+            CONFIG_CHIP = $(OPTION_CHIP_1701)
+        else ifeq (V66, $(SW_CHIP_PLATFORM))
+            CONFIG_CHIP = $(OPTION_CHIP_1673)
+        else ifeq (R40, $(SW_CHIP_PLATFORM))
+            CONFIG_CHIP = $(OPTION_CHIP_1701)
+        else
+            $(warning $(SW_CHIP_PLATFORM))
+        endif
+    else
+        product = $(shell echo $(TARGET_PRODUCT) | cut -d '_' -f 1)
+        ifeq (astar, $(product)) #A33
+            CONFIG_CHIP = $(OPTION_CHIP_1667)
+            $(warning A33)
+        else ifeq (octopus, $(product)) #A83
+            CONFIG_CHIP = $(OPTION_CHIP_1673)
+            $(warning A83)
+        else ifeq (tulip, $(product)) #A64
+            CONFIG_CHIP = $(OPTION_CHIP_1689)
+        else ifeq (kylin, $(product)) #A80
+            CONFIG_CHIP = $(OPTION_CHIP_1639)
+        else ifeq (magton, $(product)) #V40
+            CONFIG_CHIP = $(OPTION_CHIP_1701)
+        else ifeq (aston, $(product)) #V66
+            CONFIG_CHIP = $(OPTION_CHIP_1673)
+        else ifeq (sunflower, $(product)) #A33W
+            CONFIG_CHIP = $(OPTION_CHIP_1667)
+        else ifeq (azalea, $(product)) #V40
+            CONFIG_CHIP = $(OPTION_CHIP_1701)
+        else
+            ifneq ($(CONFIG_CHIP), $(OPTION_CHIP_1681)) #V3/V3s
+            ifneq ($(CONFIG_CHIP), $(OPTION_CHIP_1651)) #A20
+                $(warning $(product))
+                CONFIG_CHIP = -1
+            endif
+            endif
+        endif
+    endif
+
+    ifeq (-1, $(CONFIG_CHIP))
+        product = $(shell echo $(TARGET_PRODUCT) | cut -d '_' -f 1)
+        ifeq (sugar, $(product))
+            CONFIG_CHIP = $(OPTION_CHIP_1651)
+        endif
+    endif
+endif
+
+LOCAL_CFLAGS += -DCONFIG_CHIP=$(CONFIG_CHIP)
+
+########## configure CONFIG_OS_VERSION ########## 
+ifeq ($(CONFIG_OS), $(OPTION_OS_ANDROID))
+    os_version = $(shell echo $(PLATFORM_VERSION) | cut -c 1-3)
+    ifeq ($(os_version), 4.2)
+        CONFIG_OS_VERSION = $(OPTION_OS_VERSION_ANDROID_4_2)
+    else ifeq ($(os_version), 4.4)
+        CONFIG_OS_VERSION = $(OPTION_OS_VERSION_ANDROID_4_4)
+    else ifeq ($(os_version), 5.0)
+        CONFIG_OS_VERSION = $(OPTION_OS_VERSION_ANDROID_5_0)
+    else ifeq ($(os_version), 5.1)
+        CONFIG_OS_VERSION = $(OPTION_OS_VERSION_ANDROID_5_0)
+    else ifeq ($(os_version), 6.0)
+        CONFIG_OS_VERSION = $(OPTION_OS_VERSION_ANDROID_6_0)
+    else
+        $(warning $(os_version))
+        CONFIG_OS_VERSION = -1	
+    endif
+endif
+
+LOCAL_CFLAGS += -DCONFIG_OS_VERSION=$(CONFIG_OS_VERSION) 
+
+########## configure USE_SW_DEINTERLACE ########## 
+LIB_AW_PATH := $(TOP)/frameworks/av/media/liballwinner
+LAW_CFLAGS :=
+
+SW_DEINTERLACE_FLAGS = $(shell test -d $(LIB_AW_PATH)/LIBRARY/PLAYER/sw-deinterlace;echo $$?)
+ifeq ($(SW_DEINTERLACE_FLAGS), 0)
+USE_SW_DEINTERLACE := yes
+LAW_CFLAGS += -DUSE_SW_DEINTERLACE
+endif
+
+############ configure USE_NEW_DISPLAY ############
+USE_NEW_DISPLAY := 0
+ifeq ($(CONFIG_CHIP),$(OPTION_CHIP_1667))
+    ifeq ($(CONFIG_OS_VERSION),$(OPTION_OS_VERSION_ANDROID_5_0))
+    USE_NEW_DISPLAY := 1
+    endif
+    ifeq ($(CONFIG_OS_VERSION),$(OPTION_OS_VERSION_ANDROID_6_0))
+    USE_NEW_DISPLAY := 1
+    endif
+# on A83-pad-5.0
+else ifeq ($(CONFIG_CHIP),$(OPTION_CHIP_1673))
+    ifeq ($(CONFIG_PRODUCT),$(OPTION_PRODUCT_PAD))
+        ifeq ($(CONFIG_OS_VERSION),$(OPTION_OS_VERSION_ANDROID_5_0))
+        USE_NEW_DISPLAY := 1
+        endif
+        ifeq ($(CONFIG_OS_VERSION),$(OPTION_OS_VERSION_ANDROID_6_0))
+        USE_NEW_DISPLAY := 1
+        endif
+    endif
+# on A80-pad-5.0
+else ifeq ($(CONFIG_CHIP),$(OPTION_CHIP_1639))
+    ifeq ($(CONFIG_PRODUCT),$(OPTION_PRODUCT_PAD))
+        ifeq ($(CONFIG_OS_VERSION),$(OPTION_OS_VERSION_ANDROID_5_0))
+        USE_NEW_DISPLAY := 1
+        endif
+        ifeq ($(CONFIG_OS_VERSION),$(OPTION_OS_VERSION_ANDROID_6_0))
+        USE_NEW_DISPLAY := 1
+        endif
+    endif
+# on A80-tvbox-5.0
+else ifeq ($(CONFIG_CHIP),$(OPTION_CHIP_1639))
+    ifeq ($(CONFIG_PRODUCT),$(OPTION_PRODUCT_TVBOX))
+        ifeq ($(CONFIG_OS_VERSION),$(OPTION_OS_VERSION_ANDROID_5_0))
+        USE_NEW_DISPLAY := 1
+        endif
+        ifeq ($(CONFIG_OS_VERSION),$(OPTION_OS_VERSION_ANDROID_6_0))
+        USE_NEW_DISPLAY := 1
+        endif
+    endif
+else ifeq ($(CONFIG_CHIP),$(OPTION_CHIP_1689))
+    ifeq ($(CONFIG_OS_VERSION),$(OPTION_OS_VERSION_ANDROID_5_0))
+        USE_NEW_DISPLAY := 1
+    endif
+    ifeq ($(CONFIG_OS_VERSION),$(OPTION_OS_VERSION_ANDROID_6_0))
+        USE_NEW_DISPLAY := 1
+    endif
+# on A20E-CDR-4.4
+else ifeq ($(CONFIG_CHIP),$(OPTION_CHIP_1701))
+      USE_NEW_DISPLAY := 1
+endif
+
+# on all secure box
+ifeq ($(CONFIG_PRODUCT),$(OPTION_PRODUCT_TVBOX))
+    ifeq ($(BOARD_WIDEVINE_OEMCRYPTO_LEVEL), 1)
+    USE_NEW_DISPLAY := 1
+    endif
+endif
+
+LOCAL_CFLAGS += -DUSE_NEW_DISPLAY=$(USE_NEW_DISPLAY)
+
+########## configure GPU_TYPE_MALI ##########
+GPU_TYPE_MALI := 0
+ifeq ($(CONFIG_CHIP), $(OPTION_CHIP_1680))
+    GPU_TYPE_MALI := 1
+else ifeq ($(CONFIG_CHIP), $(OPTION_CHIP_1667))
+    GPU_TYPE_MALI := 1
+else ifeq ($(CONFIG_CHIP), $(OPTION_CHIP_1689))
+    GPU_TYPE_MALI := 1
+else ifeq ($(CONFIG_CHIP), $(OPTION_CHIP_1701))
+    GPU_TYPE_MALI := 1
+else
+    GPU_TYPE_MALI := 0
+endif
+LOCAL_CFLAGS += -DGPU_TYPE_MALI=$(GPU_TYPE_MALI)
+
+########## configure DROP_3D_SECOND_VIDEO_STREAM ##########
+DROP_3D_SECOND_VIDEO_STREAM := 0
+ifeq (1, $(USE_NEW_DISPLAY))
+    ifeq ($(CONFIG_PRODUCT), $(OPTION_PRODUCT_PAD))
+        DROP_3D_SECOND_VIDEO_STREAM := 1
+    endif
+endif
+LOCAL_CFLAGS += -DDROP_3D_SECOND_VIDEO_STREAM=$(DROP_3D_SECOND_VIDEO_STREAM)
+
+########## configure MUTE_DRM_WHEN_HDMI_FLAG ##########
+MUTE_DRM_WHEN_HDMI_FLAG := 0
+ifeq ($(CONFIG_PRODUCT), $(OPTION_PRODUCT_PAD))
+    ifeq ($(CONFIG_OS_VERSION), $(OPTION_OS_VERSION_ANDROID_5_0))
+        MUTE_DRM_WHEN_HDMI_FLAG := 1
+    else ifeq ($(CONFIG_OS_VERSION), $(OPTION_OS_VERSION_ANDROID_6_0))
+        MUTE_DRM_WHEN_HDMI_FLAG := 1
+    endif
+endif
+LOCAL_CFLAGS += -DMUTE_DRM_WHEN_HDMI_FLAG=$(MUTE_DRM_WHEN_HDMI_FLAG)
+
+########## configure WIDEVINE_OEMCRYPTO_LEVEL ##########
+ifeq ($(BOARD_WIDEVINE_OEMCRYPTO_LEVEL), 1)
+LAW_CFLAGS += -DWIDEVINE_OEMCRYPTO_LEVEL=1
+else
+LAW_CFLAGS += -DWIDEVINE_OEMCRYPTO_LEVEL=3
+endif
+
+########## configure CMCC ##########
+CMCC := no
+ifeq ($(CONFIG_CMCC), $(OPTION_CMCC_YES))
+CMCC := yes
+endif
+LOCAL_CFLAGS += -DCMCC=$(CMCC)
+
+########## configure DTV ##########
+DTV := no
+ifeq ($(CONFIG_DTV), $(OPTION_DTV_YES))
+DTV := yes
+endif
+LOCAL_CFLAGS += -DDTV=$(DTV)
+########## configure ENABLE_SUBTITLE_DISPLAY_IN_CEDARX ##########
+#We surpport display subtitle in cedarx on android4.2 and 4.4.
+#but the APIs of skia on android5.0 are much more different,
+#so it do not work on android5.0
+
+ENABLE_SUBTITLE_DISPLAY_IN_CEDARX := 0
+ifeq ($(CONFIG_OS_VERSION),$(OPTION_OS_VERSION_ANDROID_5_0))
+    ENABLE_SUBTITLE_DISPLAY_IN_CEDARX := 0
+else ifeq ($(CONFIG_OS_VERSION),$(OPTION_OS_VERSION_ANDROID_6_0))
+    ENABLE_SUBTITLE_DISPLAY_IN_CEDARX := 0    
+endif
+LOCAL_CFLAGS += -DENABLE_SUBTITLE_DISPLAY_IN_CEDARX=$(ENABLE_SUBTITLE_DISPLAY_IN_CEDARX)
+
+########## configure CEDARX_SUPPORT_SOUNDTOUCH ##########
+ifeq ($(CONFIG_OS), $(OPTION_OS_ANDROID))
+    #LOCAL_CFLAGS += -DCEDARX_SUPPORT_SOUNDTOUCH
+endif
+
+########## configure linux version ##########
+LINUX_VERSION_3_4  = 1
+LINUX_VERSION_3_10 = 2
+LOCAL_CFLAGS += -DLINUX_VERSION_3_4=$(LINUX_VERSION_3_4)
+LOCAL_CFLAGS += -DLINUX_VERSION_3_10=$(LINUX_VERSION_3_10)
+
+LINUX_VERSION = LINUX_VERSION_3_4
+
+ifeq ($(CONFIG_OS), $(OPTION_OS_ANDROID))
+    ifdef SW_PLATFORM_KERNEL_VERSION
+        ifeq (v3_4, $(SW_PLATFORM_KERNEL_VERSION))
+            LINUX_VERSION = $(LINUX_VERSION_3_4)
+        else ifeq (v3_10, $(SW_PLATFORM_KERNEL_VERSION))
+            LINUX_VERSION = $(LINUX_VERSION_3_10)
+        else
+            $(warning $(SW_PLATFORM_KERNEL_VERSION))
+        endif
+    endif
+endif
+
+ifeq ($(CONFIG_CHIP), $(OPTION_CHIP_1663))
+    LINUX_VERSION = $(LINUX_VERSION_3_10)
+else ifeq ($(CONFIG_CHIP), $(OPTION_CHIP_1689))
+    LINUX_VERSION = $(LINUX_VERSION_3_10)
+else ifeq ($(CONFIG_CHIP), $(OPTION_CHIP_1701))
+    LINUX_VERSION = $(LINUX_VERSION_3_10)
+else ifeq ($(CONFIG_CHIP), $(OPTION_CHIP_1718))
+    LINUX_VERSION = $(LINUX_VERSION_3_10)
+endif
+
+LOCAL_CFLAGS += -DLINUX_VERSION=$(LINUX_VERSION)
+
+############ configure USE_NEW_BDMV_STREAM ############
+USE_NEW_BDMV_STREAM := 0
+# on H64-tvbox
+ifeq ($(CONFIG_CHIP),$(OPTION_CHIP_1689))
+    ifeq ($(CONFIG_PRODUCT),$(OPTION_PRODUCT_TVBOX))
+        ifeq ($(CONFIG_OS_VERSION),$(OPTION_OS_VERSION_ANDROID_5_0))
+			USE_NEW_BDMV_STREAM := 1
+        endif
+    endif
+endif
+
+LOCAL_CFLAGS += -DUSE_NEW_BDMV_STREAM=$(USE_NEW_BDMV_STREAM)
+
+############ configure ADJUST_ADDRESS_FOR_SECURE_OS_OPTEE ############
+#on semelis secure os, we transform phy addr to secure os to operate the buffer,
+#but we adjust on optee secure os, just transform vir addr.
+
+ifeq ($(SECURE_OS_OPTEE), yes)
+    LOCAL_CFLAGS +=-DADJUST_ADDRESS_FOR_SECURE_OS_OPTEE=1
+else
+    LOCAL_CFLAGS +=-DADJUST_ADDRESS_FOR_SECURE_OS_OPTEE=0
+endif
+
+###################################end define####################################
+

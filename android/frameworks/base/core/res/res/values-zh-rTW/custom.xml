@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- add for reboot global action -->
+    <string name="reboot_title">"重新啓動"</string>
+    <string name="reboot_confirm">"您要重新啓動嗎？這樣會停用您已安裝的所有第三方應用。"</string>
+    <string name="global_action_reboot">"重啓"</string>
+
+    <!--for reboot recovery -->
+    <string name="reboot_to_recovery_title">重啓進入recovery</string>
+    <string name="reboot_to_recovery_message">重啓...</string>
+</resources>

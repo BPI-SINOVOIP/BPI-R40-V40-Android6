@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- Whether or not low mem device, always show thumbnail  -->
+    <bool name="config_always_show_thumbnail_ignore_mem">false</bool>
+</resources>

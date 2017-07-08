@@ -1,0 +1,162 @@
+<mixer>
+  <!-- These are the initial mixer settings -->
+
+
+
+  <!-- These are commonly used control sequences -->
+  <path name="aif1.0-dac">
+
+  </path>
+
+  <path name="adc-aif1.0">
+
+  </path>
+
+  <path name="dac-headphone">
+
+  </path>
+
+  <path name="mixer-headphone">
+
+  </path>
+
+  <path name="dac-mixer">
+
+  </path>
+
+  <path name="mixer-speaker">
+
+  </path>
+
+
+  <path name="media-speaker">
+
+  </path>
+
+  <path name="media-speaker-off">
+
+  </path>
+
+  <path name="media-headphones">
+
+  </path>
+
+  <path name="media-single-speaker">
+
+  </path>
+ 	<!-- phone ring -->
+  <path name="phone-ring-voice">
+
+  </path>
+    <!-- capture -->
+  <path name="media-main-mic">
+  
+  </path>
+
+  <path name="media-digital-mic">
+
+  </path>
+
+  <path name="media-headset-mic">
+
+  </path>
+
+  <!-- dbb phone path -->
+  <path name="digital-phone-speaker">
+
+  </path>
+
+  <path name="digital-phone-headset">
+
+  </path>
+
+  <path name="digital-phone-headphone">
+
+  </path>
+
+  <path name="digital-phone-bt">
+
+  </path>
+
+  <path name="digital-phone-earpiece">
+
+  </path>
+<!-- capture when in call with dbb-->
+  <path name="capture-dbb-phone-mainmic">
+
+  </path>
+
+ <!-- abb phone path -->
+  <path name="analog-mainmic">
+
+  </path>
+
+  <path name="analog-headsetmic">
+
+  </path>
+
+  <path name="analog-phonein">
+
+  </path>
+  <path name="mixer-earpiece">
+
+  </path>
+
+  <path name="analog-phone-speaker">
+
+  </path>
+
+  <path name="analog-phone-headset">
+
+  </path>
+
+  <path name="analog-phone-headphone">
+
+  </path>
+
+  <path name="analog-phone-earpiece">
+
+  </path>
+
+  <path name="analog-phone-bt">
+
+  </path>
+
+  <path name="abb-phone-keytone-speaker">
+
+  </path>
+
+  <path name="abb-phone-keytone-headphones">
+
+  </path>
+
+  <path name="abb-phone-keytone-bt">
+
+  </path>
+
+  <path name="abb-phone-keytone-earpiece">
+
+  </path>
+
+  <!-- capture when in call with abb-->
+  <path name="capture-abb-phone-mainmic">
+
+  </path>
+
+  <path name="capture-abb-phone-headsetmic">
+
+  </path>
+
+  <path name="capture-abb-phone-btmic">
+
+  </path>
+
+  <path name="com-ap-bt">
+
+  </path>
+  <path name="com-bt-ap">
+
+  </path>
+  <path name="null">
+  </path>
+</mixer>
