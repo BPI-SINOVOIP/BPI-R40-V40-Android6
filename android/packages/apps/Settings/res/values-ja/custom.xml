@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cpu_type" msgid="6793279B8D03BCB4124">"プロセッサのタイプ"</string>
+    <string name="software_version" msgid="1723274B8503B6B7134">ソフトウェアのバージョン"</string>
+</resources>
