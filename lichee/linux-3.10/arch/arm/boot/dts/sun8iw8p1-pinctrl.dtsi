@@ -1,0 +1,57 @@
+/*
+ * Allwinner sun8iw8p1 pin config info.
+ * Modified by czy
+ */
+
+/{
+	soc: soc@01c00000 {
+		pio: pinctrl@01c20800 {
+			compatible = "allwinner,sun8iw8p1-pinctrl";
+			reg = <0x0 0x01c20800 0x0 0x400>;
+			device_type = "pio";
+			clocks = <&clk_pio>;
+			gpio-controller;
+			interrupt-controller;
+			#interrupt-cells = <2>;
+			#size-cells = <0>;
+			#gpio-cells = <6>;
+
+			interrupts = <GIC_SPI 15 4>,
+				     <GIC_SPI 17 4>;
+
+			uart0_pins_a: uart0@0 {
+				allwinner,pins = "PB8", "PB9";
+				allwinner,pname = "uart0_tx", "uart0_rx";
+				allwinner,function = "uart0";
+				allwinner,muxsel = <3>;
+				allwinner,drive = <1>;
+				allwinner,pull = <1>;
+			};
+
+			uart0_pins_b: uart0@1 {
+				allwinner,pins = "PB8", "PB9";
+				allwinner,function = "io_disabled";
+				allwinner,muxsel = <7>;
+				allwinner,drive = <1>;
+				allwinner,pull = <1>;
+			};
+
+			uart1_pins_a: uart1@0 {
+				allwinner,pins = "PE21", "PE22";
+				allwinner,pname = "uart1_tx", "uart1_rx";
+				allwinner,function = "uart1";
+				allwinner,muxsel = <4>;
+				allwinner,drive = <1>;
+				allwinner,pull = <1>;
+			};
+
+			uart1_pins_b: uart1@1 {
+				allwinner,pins = "PE21", "PE22";
+				allwinner,function = "io_disabled";
+				allwinner,muxsel = <7>;
+				allwinner,drive = <1>;
+				allwinner,pull = <1>;
+			};
+		};
+	};
+};
