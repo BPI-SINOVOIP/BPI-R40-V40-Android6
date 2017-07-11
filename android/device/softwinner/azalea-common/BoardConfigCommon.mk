@@ -51,6 +51,33 @@ TARGET_USES_ION := true
 BOARD_SEPOLICY_DIRS := \
     device/softwinner/azalea-common/sepolicy
 
+#Justin Porting for BPI-M2U-M2B Root Start
+BOARD_SEPOLICY_UNION := \
+	bluetooth.te \
+	device.te \
+	file_contexts \
+	genfs_contexts \
+	init.te \
+	kernel.te \
+	mediaserver.te \
+	netd.te \
+	preinstall.te \
+	recovery.te \
+        rild.te \
+	sayeye.te \
+	sensors.te \
+	service_contexts \
+	shell.te \
+	surfaceflinger.te \
+	system_app.te \
+	system_server.te \
+	unconfined.te \
+	vold.te \
+	wpa.te \
+    file.te \
+    logger.te \
+	platform_app.te
+#Justin Porting for BPI-M2U-M2B  Root End
 USE_OPENGL_RENDERER := true
 
 

@@ -8,6 +8,11 @@ app_domain(system_app)
 net_domain(system_app)
 binder_service(system_app)
 
+#Justin Porting for BPI-M2U-M2B Root Start
+allow system_app system_app_data_file:file { rw_file_perms create_file_perms execute_no_trans execute };
+#Justin Porting for BPI-M2U-M2B Root End
+
+
 # Read and write /data/data subdirectory.
 allow system_app system_app_data_file:dir create_dir_perms;
 allow system_app system_app_data_file:{ file lnk_file } create_file_perms;

@@ -123,7 +123,9 @@ static const struct fs_path_config android_files[] = {
 
     /* the following five files are INTENTIONALLY set-uid, but they
      * are NOT included on user builds. */
-    { 04750, AID_ROOT,      AID_SHELL,     0, "system/xbin/su" },
+    //{ 04750, AID_ROOT,      AID_SHELL,     0, "system/xbin/su" }, //BPI-M2U-M2B-Root Root Porting Start
+	{ 06755, AID_ROOT,      AID_ROOT,     0, "system/xbin/su" }, //BPI-M2U-M2B-Root Root Porting Start
+	{ 06755, AID_ROOT,      AID_ROOT,     0, "system/bin/su" },  //BPI-M2U-M2B-Root Root Porting Start
     { 06755, AID_ROOT,      AID_ROOT,      0, "system/xbin/librank" },
     { 06755, AID_ROOT,      AID_ROOT,      0, "system/xbin/procrank" },
     { 06755, AID_ROOT,      AID_ROOT,      0, "system/xbin/procmem" },

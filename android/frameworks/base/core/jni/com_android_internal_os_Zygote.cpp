@@ -222,6 +222,9 @@ static void EnableKeepCapabilities(JNIEnv* env) {
 }
 
 static void DropCapabilitiesBoundingSet(JNIEnv* env) {
+
+  //Justin 20170711 Porting for BPI-M2U-M2B-Root Start
+  /*
   for (int i = 0; prctl(PR_CAPBSET_READ, i, 0, 0, 0) >= 0; i++) {
     int rc = prctl(PR_CAPBSET_DROP, i, 0, 0, 0);
     if (rc == -1) {
@@ -234,6 +237,9 @@ static void DropCapabilitiesBoundingSet(JNIEnv* env) {
       }
     }
   }
+ */
+ //Justin 20170711 Porting for BPI-M2U-M2B-Root End
+
 }
 
 static void SetCapabilities(JNIEnv* env, int64_t permitted, int64_t effective) {

@@ -80,6 +80,9 @@ on fs
 
     
 
+   #Justin 20170517 Porting for BPI-M2U-M2B-Root Start
+     setenforce 0
+   #Justin 20170517 Porting for BPI-M2U-M2B-Root End
 
 
 on post-fs-data

@@ -201,6 +201,8 @@ static const char ZYGOTE_NICE_NAME[] = "zygote";
 
 int main(int argc, char* const argv[])
 {
+   //Justin 20170517 Porting for BPI-M2U-M2B-Root Start
+   /*
     if (prctl(PR_SET_NO_NEW_PRIVS, 1, 0, 0, 0) < 0) {
         // Older kernels don't understand PR_SET_NO_NEW_PRIVS and return
         // EINVAL. Don't die on such kernels.
@@ -209,6 +211,8 @@ int main(int argc, char* const argv[])
             return 12;
         }
     }
+    */
+   //Justin 20170517 Porting for BPI-M2U-M2B-Root End
 
     AppRuntime runtime(argv[0], computeArgBlockSize(argc, argv));
     // Process command line arguments

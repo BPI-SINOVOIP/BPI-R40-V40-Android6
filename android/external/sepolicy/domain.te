@@ -236,7 +236,9 @@ neverallow { domain -system_server } security_file:lnk_file { create setattr unl
 # init starts in kernel domain and switches to init domain via setcon in
 # the init.rc, so the setenforce occurs while still in kernel. After
 # switching domains, there is never any need to setenforce again by init.
-neverallow domain kernel:security setenforce;
+#Justin Porting for BPI-M2U-M2B Root Start
+#neverallow domain kernel:security setenforce;
+#Justin Porting for BPI-M2U-M2B Root Start
 neverallow { domain -kernel } kernel:security setcheckreqprot;
 
 # No booleans in AOSP policy, so no need to ever set them.
@@ -337,8 +339,9 @@ neverallow domain default_android_service:service_manager add;
 
 # Require that domains explicitly label unknown properties, and do not allow
 # anyone but init to modify unknown properties.
-neverallow { domain -init } default_prop:property_service set;
-
+#Justin Porting for BPI-M2U-M2B Root Start
+#neverallow { domain -init } default_prop:property_service set;
+#Justin Porting for BPI-M2U-M2B Root End
 neverallow { domain -init -recovery -system_server } frp_block_device:blk_file rw_file_perms;
 
 # No domain other than recovery can write to system.

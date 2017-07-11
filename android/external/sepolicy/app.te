@@ -349,7 +349,10 @@ neverallow appdomain efs_file:dir_file_class_set write;
 neverallow { appdomain -shell } efs_file:dir_file_class_set read;
 
 # Write to various pseudo file systems.
-neverallow { appdomain -bluetooth -nfc }
+#Justin Porting for BPI-M2U-M2B Root Start
+#neverallow { appdomain -bluetooth -nfc }
+neverallow { appdomain -bluetooth -nfc -system_app -platform_app}
+#Justin Porting for BPI-M2U-M2B Root End
     sysfs:dir_file_class_set write;
 neverallow appdomain
     proc:dir_file_class_set write;

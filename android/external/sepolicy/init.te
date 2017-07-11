@@ -265,7 +265,9 @@ allow init init:key { write search setattr };
 
 # Allow init to create /data/unencrypted
 allow init unencrypted_data_file:dir create_dir_perms;
-
+#Justin Porting for BPI-M2U-M2B Root Start
+allow init kernel:security setenforce;
+#Justin Porting for BPI-M2U-M2B Root End
 unix_socket_connect(init, vold, vold)
 
 ###

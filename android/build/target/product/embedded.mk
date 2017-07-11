@@ -67,6 +67,7 @@ PRODUCT_PACKAGES += \
     service \
     servicemanager \
     sh \
+    su	\
     surfaceflinger \
     toolbox \
     toybox \
