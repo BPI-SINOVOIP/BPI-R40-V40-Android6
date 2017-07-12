@@ -28,4 +28,12 @@
     <!-- animation scale -->
     <fraction name="def_window_animation_scale">0%</fraction>
     <fraction name="def_window_transition_scale">0%</fraction>
+       <!-- Justin Porting 20170710 Start-->
+     <integer name="def_screen_off_timeout">2147483647</integer> 
+     <bool name="def_lockscreen_disabled">true</bool> 
+     <bool name="def_accelerometer_rotation">false</bool>  
+     <bool name="def_user_setup_complete">true</bool> 
+     <!-- Justin Porting 20170710 End-->
+   
+
 </resources>
