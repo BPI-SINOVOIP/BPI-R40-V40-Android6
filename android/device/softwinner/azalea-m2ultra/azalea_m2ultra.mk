@@ -84,8 +84,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.zygote.disable_gl_preload=true
 
+# BPI-M2_Ultra-Berry
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=120 \
+    ro.sf.lcd_density=240 \
     ro.display.sdcard=1 \
     ro.part.sdcard=1
 
