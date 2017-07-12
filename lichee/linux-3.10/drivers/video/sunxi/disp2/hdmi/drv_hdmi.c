@@ -315,6 +315,11 @@ static s32 hdmi_set_display_mode(u32 mode)
 	u32 i;
 	bool find = false;
 
+       //Justin 20170517 Porting for BPI-M2U-M2B HDMI output Start
+        mode=10;
+       //Justin 20170517 Porting for BPI-M2U-M2B HDMI output End
+
+
 	__inf("[hdmi_set_display_mode],mode:%d\n",mode);
 
 	for (i=0; i<sizeof(hdmi_mode_tbl)/sizeof(struct disp_hdmi_mode); i++)

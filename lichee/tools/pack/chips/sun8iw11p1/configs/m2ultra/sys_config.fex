@@ -633,7 +633,7 @@ sata_regulator1     = "vdd-sata-12"
 [boot_disp]
 output_disp = 0
 ; output_type: 1:LCD 2:TV 3:HDMI 4:VGA
-output_type = 1
+output_type = 3
 output_mode = 10
 auto_hpd        = 1
 output_full     = 0
@@ -660,11 +660,11 @@ hdmi_mode_check = 1
 disp_init_enable         = 1
 disp_mode                = 0
 
-screen0_output_type      = 1
+screen0_output_type      = 3
 screen0_output_mode      = 10
 
-screen1_output_type      = 3
-screen1_output_mode      = 4
+screen1_output_type      = 1
+screen1_output_mode      = 5
 
 fb0_format               = 0
 fb0_width                = 0
