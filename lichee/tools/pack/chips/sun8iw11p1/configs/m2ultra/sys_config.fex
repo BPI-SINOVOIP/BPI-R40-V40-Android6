@@ -1273,7 +1273,7 @@ bt_rst_n							= port:PH12<1><1><1><0>
 btlpm_used						= 1
 compatible						= "allwinner,sunxi-btlpm"
 uart_index						= 3
-bt_wake               = port:PG11<1><1><1><0>
+bt_wake              = port:PG11<1><0><2><1>
 bt_hostwake          = port:power1<0><default><default><default>
 
 ;--------------------------------------------------------------------------------

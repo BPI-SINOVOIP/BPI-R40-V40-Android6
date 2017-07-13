@@ -46,8 +46,9 @@ PRODUCT_COPY_FILES += \
     device/softwinner/azalea-m2ultra/configs/sunxi-keyboard.kl:system/usr/keylayout/sunxi-keyboard.kl \
     device/softwinner/azalea-m2ultra/configs/tp.idc:system/usr/idc/tp.idc
 
-#PRODUCT_COPY_FILES += \
-#   device/softwinner/azalea-m2ultra/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
+# BPI-M2_Ultra-Berry
+PRODUCT_COPY_FILES += \
+   device/softwinner/azalea-m2ultra/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
 	
 # bootanimation
 PRODUCT_COPY_FILES += \

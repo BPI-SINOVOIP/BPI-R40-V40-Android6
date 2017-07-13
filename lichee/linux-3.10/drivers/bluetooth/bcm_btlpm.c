@@ -766,8 +766,10 @@ static int __init bluesleep_probe(struct platform_device *pdev)
 	bsi->host_wake_irq = gpio_to_irq(bsi->host_wake);
 	if (IS_ERR_VALUE(bsi->host_wake_irq)) {
 		BT_ERR("map gpio [%d] to virq failed, errno = %d\n",bsi->host_wake, bsi->host_wake_irq);
-		ret = -ENODEV;
-		return ret;
+	//Justin 20170712 Porting for BPI-M2U-M2B can't open BT Start
+	//	ret = -ENODEV;
+	//	return ret;
+	//Justin 20170712 Porting for BPI-M2U-M2B can't open BT End
 	}
 	
 	uart_index = DEFAULT_UART_INDEX;
@@ -776,6 +778,9 @@ static int __init bluesleep_probe(struct platform_device *pdev)
 		case 0:
 		case 1:
 		case 2:
+		//Justin 20170712 Porting for BPI-M2U-M2B can't open BT Start
+		case 3:
+		//Justin 20170712 Porting for BPI-M2U-M2B can't open BT End
 			uart_index = val;
 			break;
 		default:
@@ -786,6 +791,11 @@ static int __init bluesleep_probe(struct platform_device *pdev)
 	bluesleep_uart_dev = sw_uart_get_pdev(uart_index);
 	
 	wake_lock_init(&bsi->wake_lock, WAKE_LOCK_SUSPEND, "bluesleep");
+   //Justin 20170712 Porting for BPI-M2U-M2B can't open BT Start
+	BT_DBG("set ap_wake_bt high\n");
+	gpio_set_value(bsi->ext_wake, bsi->ext_wake_assert);
+	//Justin 20170712 Porting for BPI-M2U-M2B can't open BT End
+	
 	return 0;
 }
 
