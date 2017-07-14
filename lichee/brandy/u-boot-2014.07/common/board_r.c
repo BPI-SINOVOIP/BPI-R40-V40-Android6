@@ -455,6 +455,10 @@ int initr_sunxi_display(void)
 }
 #endif
 
+ //Justin Porting for BPI-M2U-M2B Start
+extern int sunxi_led_init(void);
+ //Justin Porting for BPI-M2U-M2B End
+
 static int initr_sunxi_flash(void)
 {
 	int ret = 0;
@@ -542,7 +546,9 @@ init_fnc_t init_sequence_r[] = {
 #endif
 #ifdef CONFIG_SUNXI
 	platform_dma_init,
-
+    //Justin Porting for BPI-M2U-M2B Start
+	 sunxi_led_init,
+	 //Justin Porting for BPI-M2U-M2B End
 	#ifdef  CONFIG_SUNXI_DISPLAY
 	#ifndef CONFIG_SUNXI_MULITCORE_BOOT
 	initr_sunxi_display,

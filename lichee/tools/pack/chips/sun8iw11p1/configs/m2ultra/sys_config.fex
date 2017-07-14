@@ -8,6 +8,13 @@
 version = "100"
 machine = "m2ultra"
 
+
+;Enable HDMI USB STAT power 
+[boot_init_gpio]
+boot_init_gpio_used   = 1
+gpio0 =  port:PH23<1><default><default><1>
+
+
 [platform]
 eraseflag   = 0
 debug_mode = 1

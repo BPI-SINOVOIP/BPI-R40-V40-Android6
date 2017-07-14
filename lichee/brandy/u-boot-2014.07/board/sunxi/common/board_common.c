@@ -719,4 +719,56 @@ int board_late_init(void)
 
 	return ret;
 }
+ //Justin Porting for BPI-M2U-M2B Start
+int gpio_control(void)
+{
+	int ret;
+	char *sub_key_value = NULL;
+	char  tmp_gpio_name[16]={0};
+	user_gpio_set_t	tmp_gpio_config;
+	int count = 0;
+	int nodeoffset = -1;
 
+	nodeoffset = fdt_path_offset(working_fdt, "/soc/boot_init_gpio");
+	if(nodeoffset < 0 || get_boot_work_mode() != WORK_MODE_BOOT)
+	{
+	    return 0;
+	}
+
+	ret = fdt_getprop_string(working_fdt, nodeoffset, "status", &sub_key_value);
+	if ((ret < 0) || strncmp("okay", sub_key_value, 4))
+	{
+		return 0;
+	}
+
+	printf("boot_init_gpio used\n");
+    while(1)
+    {
+        sprintf(tmp_gpio_name, "gpio%d", count);
+        ret = fdt_get_one_gpio("/soc/boot_init_gpio", tmp_gpio_name, &tmp_gpio_config);
+	    if(ret < 0)
+	    {
+		    break;
+	    }
+
+	    ret = gpio_request_early(&tmp_gpio_config, 1, 1);
+	    if(ret < 0)
+	    {
+		    printf("[boot_init_gpio] %s gpio_request_early failed\n", tmp_gpio_name);
+		    return -1;
+	    }
+	    count++;
+	}
+	return  0;
+}
+
+int sunxi_led_init(void)
+{
+	//init some gpios for led when boot
+	gpio_control();
+	//init led when card product
+
+	return 0;
+}
+
+ //Justin Porting for BPI-M2U-M2B End
