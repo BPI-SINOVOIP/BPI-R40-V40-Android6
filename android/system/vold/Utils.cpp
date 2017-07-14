@@ -258,12 +258,16 @@ status_t ForkExecvp(const std::vector<std::string>& args, security_context_t con
 
     if (setexeccon(context)) {
         LOG(ERROR) << "Failed to setexeccon";
-        abort();
+        //Justin Porting for BPI-M2U-M2B Start
+        //abort();
+        //Justin Porting for BPI-M2U-M2B End
     }
     status_t res = android_fork_execvp(argc, argv, NULL, false, true);
     if (setexeccon(nullptr)) {
         LOG(ERROR) << "Failed to setexeccon";
-        abort();
+        //Justin Porting for BPI-M2U-M2B Start
+        //abort();
+        //Justin Porting for BPI-M2U-M2B End
     }
 
     free(argv);
@@ -290,12 +294,16 @@ status_t ForkExecvp(const std::vector<std::string>& args,
 
     if (setexeccon(context)) {
         LOG(ERROR) << "Failed to setexeccon";
-        abort();
+         //Justin Porting for BPI-M2U-M2B Start
+        //abort();
+         //Justin Porting for BPI-M2U-M2B End
     }
     FILE* fp = popen(cmd.c_str(), "r");
     if (setexeccon(nullptr)) {
         LOG(ERROR) << "Failed to setexeccon";
-        abort();
+         //Justin Porting for BPI-M2U-M2B Start
+        //abort();
+         //Justin Porting for BPI-M2U-M2B End
     }
 
     if (!fp) {
