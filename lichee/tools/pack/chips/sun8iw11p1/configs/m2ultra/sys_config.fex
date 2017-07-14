@@ -330,11 +330,6 @@ twi2_used        = 1
 twi2_scl         = port:PB20<2><default><default><default>
 twi2_sda         = port:PB21<2><default><default><default>
 
-[twi3]
-twi3_used        = 0
-twi3_scl         = port:PI0<3><default><default><default>
-twi3_sda         = port:PI1<3><default><default><default>
-
 [twi4]
 twi4_used        = 1
 twi4_scl         = port:PI02<3><default><default><default>
