@@ -469,6 +469,11 @@
 #define CONFIG_USB_EHCI
 #endif
 
+
+#define	BPI_M2_BERRY_KEY	0x2e
+
+#define BPI_M2_ULTRA_ID	1		/* BPI */
+#define BPI_M2_BERRY_ID	2		/* BPI */
 //#define CONFIG_USB_ETHER
 #ifdef CONFIG_USB_ETHER
 #define CONFIG_USB_ETH_RNDIS

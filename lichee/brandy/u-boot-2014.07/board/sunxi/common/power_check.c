@@ -10,6 +10,13 @@
 
 DECLARE_GLOBAL_DATA_PTR;
 
+
+#define	BPI_M2_BERRY_KEY	0x2e
+
+#define BPI_M2_ULTRA_ID 	1		/* BPI */
+#define BPI_M2_BERRY_ID 	2		/* BPI */
+
+
 typedef enum __BOOT_POWER_STATE
 {
 	STATE_SHUTDOWN_DIRECTLY = 0,
@@ -240,6 +247,13 @@ int PowerCheck(void)
 	nodeoffset =  fdt_path_offset(working_fdt,PMU_SCRIPT_NAME);
 	if(nodeoffset >0)
 	{
+#ifdef BPI
+#else
+		if(uboot_spare_head.boot_data.reserved[0] == BPI_M2_BERRY_ID) {
+			printf("BPI-M2 Berry: force to set pmu_bat_unused = 1\n");
+			fdt_setprop_u32(working_fdt,nodeoffset, "pmu_bat_unused", 1);
+		}
+#endif
 		script_parser_fetch(PMU_SCRIPT_NAME, "power_start", (int *)&PowerStart, 1);
 		script_parser_fetch(PMU_SCRIPT_NAME, "pmu_bat_unused", (int *)&pmu_bat_unused, 1);
 	}
@@ -248,6 +262,15 @@ int PowerCheck(void)
 
 	//check battery
 	BatExist = pmu_bat_unused?0:axp_probe_battery_exist();
+#ifdef BPI
+#else
+	printf("BPI: axp_probe_battery_exist(%d)\n", axp_probe_battery_exist());
+	printf("BPI: BatExist(%d) pmu_bat_unused(%d)\n", BatExist, pmu_bat_unused);
+        if(uboot_spare_head.boot_data.reserved[0] == BPI_M2_BERRY_ID) {
+		printf("BPI: force to set no battery in BPI-M2 Berry 1.0\n");
+		BatExist = 0; // force to set no battery
+	}
+#endif
 
 	//check power bus
 	PowerBus = axp_probe_power_source();

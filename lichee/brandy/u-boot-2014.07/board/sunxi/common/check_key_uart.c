@@ -145,7 +145,11 @@ int check_update_key(void)
 	    return 0;
 	}
 
-	key_value = uboot_spare_head.boot_ext[0].data[2];
+#ifdef BPI
+#else
+	key_value = bpi_board_version();  	
+	printf("bpi_board_version: [%x]\n", key_value);
+#endif
 	if(check_config_fel_key(key_value) == FEL_MODE)
 	{
 		return -1;

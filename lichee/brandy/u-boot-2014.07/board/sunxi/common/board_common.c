@@ -32,6 +32,13 @@ DECLARE_GLOBAL_DATA_PTR;
 
 #define PARTITION_SETS_MAX_SIZE	 1024
 
+
+#define	BPI_M2_BERRY_KEY	0x2e
+
+#define BPI_M2_ULTRA_ID 	1		/* BPI */
+#define BPI_M2_BERRY_ID 	2		/* BPI */
+
+
 int __attribute__((weak)) mmc_request_update_boot0(int dev_num)
 {
 	return 0;
@@ -510,7 +517,14 @@ int update_fdt_para_for_kernel(void* dtb_base)
 			else
 			{
 				disable_node("nand0");
+#ifdef BPI_MMC
 				disable_node("mmc2");
+#else
+				if(uboot_spare_head.boot_data.reserved[0] == BPI_M2_BERRY_ID) {
+					printf("BPI: disable_node mmc2 in BPI-M2 Berry 1.0\n");
+					disable_node("mmc2"); // BPI_MMC
+				}
+#endif
 				disable_node("mmc3");
 			}
 		}
