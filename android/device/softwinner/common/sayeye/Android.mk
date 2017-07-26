@@ -53,6 +53,10 @@ ifeq ($(TARGET_BOARD_PLATFORM), azalea)
 LOCAL_CFLAGS   += -DSUN8IW5P1
 endif
 
+ifeq ($(TARGET_BOARD_PLATFORM), bpi)
+LOCAL_CFLAGS   += -DSUN8IW5P1
+endif
+
 LOCAL_SRC_FILES := $(common_src_files)
 
 LOCAL_C_INCLUDES := $(common_c_includes)
@@ -83,6 +87,10 @@ LOCAL_CFLAGS   += -DSUN50IW1P1
 endif
 
 ifeq ($(TARGET_BOARD_PLATFORM), azalea)
+LOCAL_CFLAGS   += -DSUN8IW5P1
+endif
+
+ifeq ($(TARGET_BOARD_PLATFORM), bpi)
 LOCAL_CFLAGS   += -DSUN8IW5P1
 endif
 

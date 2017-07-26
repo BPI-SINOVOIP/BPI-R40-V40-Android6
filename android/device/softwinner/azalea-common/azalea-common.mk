@@ -126,9 +126,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.strictmode.visual=0 \
 	persist.sys.strictmode.disable=1	
 	
-
+# BPI-M2U_M2B
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.sys.cputype=QuadCore-R40
+	ro.sys.cputype=QuadCore-R40-V40
 
 # Enabling type-precise GC results in larger optimized DEX files.  The
 # additional storage requirements for ".odex" files can cause /system

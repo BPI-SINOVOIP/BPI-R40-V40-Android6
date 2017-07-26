@@ -61,6 +61,9 @@ function get_lichee_out_dir()
     if [ "$TARGET_BOARD_PLATFORM" == "azalea" ]; then
         LINUXOUT_DIR=$LICHEE_DIR/out/sun8iw11p1/android/common
     fi
+    if [ "$TARGET_BOARD_PLATFORM" == "bpi" ]; then
+        LINUXOUT_DIR=$LICHEE_DIR/out/sun8iw11p1/android/common
+    fi
 
     LINUXOUT_MODULE_DIR=$LINUXOUT_DIR/lib/modules/*/*
 }
