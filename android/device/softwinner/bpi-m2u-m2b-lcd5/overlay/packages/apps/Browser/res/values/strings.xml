@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- BPI Default homepage. -->
+    <string name="homepage_base" translatable="false">
+       http://www.banana-pi.org/</string>
+
+    <!-- Bookmarks -->
+    <string-array name="bookmarks" translatable="false">
+	<item>BananaPI BPI Official Website </item>
+        <item>http://www.banana-pi.org/</item>
+        <item>BananaPI BPI Forum</item>
+        <item>http://forum.banana-pi.org/</item>
+        <item>Google</item>
+        <item>http://www.google.com/</item>
+        <item>Twitter</item>
+        <item>http://twitter.com/</item>
+        <item>Facebook</item>
+        <item>http://www.facebook.com/</item>
+        <item>Wikipedia</item>
+        <item>http://www.wikipedia.org/</item>
+        <item>Picasa</item>
+        <item>http://picasaweb.google.com/</item>
+        <item>Yahoo!</item>
+        <item>http://www.yahoo.com/</item>
+    </string-array>
+   
+
+</resources>
