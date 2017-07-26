@@ -1,0 +1,20 @@
+# Android fstab file.
+#<src>                                         <mnt_point>  <type>  <mnt_flags and options>  <fs_mgr_flags>
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+
+/dev/block/by-name/system               /system             ext4    ro,barrier=1                                                            				   wait,verify
+/dev/block/by-name/cache                /cache              ext4    noatime,nosuid,nodev,barrier=1,data=ordered,nomblk_io_submit,noauto_da_alloc,errors=panic   wait,check,formattable
+/dev/block/by-name/alog                 /logger             ext4    noatime,nosuid,nodev,barrier=1,data=ordered,nomblk_io_submit,noauto_da_alloc,errors=panic   wait,check,formattable
+/dev/block/by-name/data                 /data             ext4    noatime,nosuid,nodev,barrier=1,data=ordered,nomblk_io_submit,noauto_da_alloc,errors=panic   wait,check,formattable
+/devices/soc.0/1c0f000.sdmmc/mmc_host/mmc*  	auto                vfat    defaults                                                                wait,check,voldmanaged=card:auto
+/devices/soc.0/1c10000.sdmmc/mmc_host/mmc*  	auto                vfat    defaults                                                                wait,check,voldmanaged=extsd:auto
+/devices/soc.0/1c12000.sdmmc/mmc_host/mmc*  	auto               vfat    defaults                                                                wait,check,voldmanaged=mapcard:auto
+/devices/soc/1c13000.udc-controller	auto                auto    defaults                                                                wait,check,voldmanaged=usbhost:auto
+/devices/soc/1c14000.ehci0-controller/usb* auto                auto    defaults                                                                wait,check,voldmanaged=usb:auto
+/devices/soc/1c14000.ohci0-controller/usb*	auto                auto    defaults                                                                wait,check,voldmanaged=usb:auto
+/devices/soc/1c19000.ehci1-controller/usb*	auto                auto    defaults                                                                wait,check,voldmanaged=usb:auto
+/devices/soc/1c19000.ohci1-controller/usb*	auto                auto    defaults                                                                wait,check,voldmanaged=usb:auto
+/devices/soc/1c1c000.ehci2-controller/usb*	auto                auto    defaults                                                                wait,check,voldmanaged=usb:auto
+/devices/soc/1c1c000.ohci2-controller/usb*	auto                auto    defaults                                                                wait,check,voldmanaged=usb:auto
+/dev/block/zram0                             none           swap    defaults                                                                zramsize=268435456
