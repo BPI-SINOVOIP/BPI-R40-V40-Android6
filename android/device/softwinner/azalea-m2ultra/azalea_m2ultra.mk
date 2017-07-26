@@ -110,8 +110,8 @@ PRODUCT_AAPT_PREF_CONFIG := tvdpi
 
 #$(call inherit-product-if-exists, vendor/google/products/gms_base.mk)
 
-PRODUCT_BRAND := Allwinner
+PRODUCT_BRAND := BPI
 PRODUCT_NAME := azalea_m2ultra
 PRODUCT_DEVICE := azalea-m2ultra
-PRODUCT_MODEL := QUAD-CORE R40 m2ultra
-PRODUCT_MANUFACTURER := Allwinner
+PRODUCT_MODEL := BPI M2 Ultra
+PRODUCT_MANUFACTURER := SINOVOIP

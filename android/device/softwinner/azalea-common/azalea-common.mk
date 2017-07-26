@@ -136,8 +136,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # each product.
 PRODUCT_TAGS += dalvik.gc.type-precise
 
+# BPI-M2U_M2B
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.product.firmware=v0.1-demo
+    ro.product.firmware=v1.0
 
 # if DISPLAY_BUILD_NUMBER := true then
 # BUILD_DISPLAY_ID := $(BUILD_ID).$(BUILD_NUMBER)
