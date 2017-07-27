@@ -87,7 +87,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # BPI-M2_Ultra-Berry
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=240 \
+    ro.sf.lcd_density=120 \
     ro.display.sdcard=1 \
     ro.part.sdcard=1
 
