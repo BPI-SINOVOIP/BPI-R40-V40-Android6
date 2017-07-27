@@ -75,3 +75,4 @@ obj-$(CONFIG_TOUCHSCREEN_TPS6507X)	+= tps6507x-ts.o
 obj-$(CONFIG_TOUCHSCREEN_GT82X)          += gt82x.o
 obj-$(CONFIG_INPUT_TOUCHSCREEN)    += ft5x/
 obj-$(CONFIG_INPUT_TOUCHSCREEN)    += gslx680new/
+obj-$(CONFIG_TOUCHSCREEN_GT9XXNEW_TS)   += gt9xxnew/
