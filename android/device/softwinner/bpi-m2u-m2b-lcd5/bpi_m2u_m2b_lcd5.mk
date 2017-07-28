@@ -39,12 +39,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.managed_users.xml:system/etc/permissions/android.software.managed_users.xml
 
+#  BPI-M2_Ultra-Berry 5LCD Touch KeyCode
 PRODUCT_COPY_FILES += \
     device/softwinner/bpi-m2u-m2b-lcd5/configs/camera.cfg:system/etc/camera.cfg \
     device/softwinner/bpi-m2u-m2b-lcd5/configs/gsensor.cfg:system/usr/gsensor.cfg \
     device/softwinner/bpi-m2u-m2b-lcd5/configs/media_profiles.xml:system/etc/media_profiles.xml \
     device/softwinner/bpi-m2u-m2b-lcd5/configs/sunxi-keyboard.kl:system/usr/keylayout/sunxi-keyboard.kl \
-    device/softwinner/bpi-m2u-m2b-lcd5/configs/tp.idc:system/usr/idc/tp.idc
+    device/softwinner/bpi-m2u-m2b-lcd5/configs/tp.idc:system/usr/idc/tp.idc \
+    device/softwinner/bpi-m2u-m2b-lcd5/configs/gt9xxnew_ts.kl:system/usr/keylayout/gt9xxnew_ts.kl
 
 # BPI-M2_Ultra-Berry
 PRODUCT_COPY_FILES += \
@@ -87,7 +89,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # BPI-M2_Ultra-Berry
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=120 \
+    ro.sf.lcd_density=160 \
     ro.display.sdcard=1 \
     ro.part.sdcard=1
 
