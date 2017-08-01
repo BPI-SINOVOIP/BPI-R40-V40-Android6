@@ -68,93 +68,110 @@ static int check_config_fel_key(uint32_t key_value)
 
 }
 
+//Justin 20170801 Porting for BPI-M2U-M2B  Start
+/*
+* fun      :       check_user_mode    
+* return  :       0: normal  1:enter fel
+*note     :      press an  key and not loosen:
+                     1) enter debug when  usb plug in  up to 3 times
+*                    2) enter fel,if press power key  up to 3 times
+*/
+static int  check_user_mode(void)
+{
+	int time_tick = 0;
+	int power_plug_count = 0;
+	int new_power_status = 0;
+	int old_power_status = 0;
 
-///*
-//* fun      :       check_user_mode
-//* return  :       0: normal  1:enter fel
-//*note     :      press an  key and not loosen:
-//                     1) enter debug when  usb plug in  up to 3 times
-//*                    2) enter fel,if press power key  up to 3 times
-//*/
-//static int  check_user_mode(void)
-//{
-//	int time_tick = 0;
-//	int power_plug_count = 0;
-//	int new_power_status = 0;
-//	int old_power_status = 0;
-//
-//	int count = 0;
-//	int power_key = 0;
-//
-//	old_power_status = axp_probe_power_source();
-//	//add by guoyingyang
-//	while(sunxi_key_read() > 0) //press key and not loosen
-//	{
-//		time_tick++;
-//
-//		//detect usb plug in&out  for debug mode
-//		new_power_status = axp_probe_power_source();
-//		if(new_power_status != old_power_status)
-//		{
-//			power_plug_count++;
-//			old_power_status = new_power_status;
-//		}
-//		if(power_plug_count == 3)
-//		{
-//			debug_mode_set();
-//			return DEBUG_MODE;
-//		}
-//
-//		//detect power key status for fel mode
-//		power_key = axp_probe_key();
-//		if(power_key > 0)
-//		{
-//			count ++;
-//		}
-//		if(count == 3)
-//		{
-//			printf("you can loosen the key to update now\n");
-//			//jump to fel
-//			return FEL_MODE;
-//		}
-//
-//
-//		__msdelay(KEY_DELAY_EACH_TIME);
-//		if(time_tick > KEY_MAX_COUNT_GO_ON)
-//		{
-//			printf("time out\n");
-//			break;
-//		}
-//	}
-//	printf("key not pressed anymore\n");
-//	return NORMAL_MODE;
-//}
+	int count = 0;
+	int power_key = 0;
+	
+	old_power_status = axp_probe_power_source();
+	//add by guoyingyang
+	while(sunxi_key_read() > 0) //press key and not loosen
+	{
+		time_tick++;
 
+		//detect usb plug in&out  for debug mode
+		new_power_status = axp_probe_power_source();
+		if(new_power_status != old_power_status)
+		{
+			power_plug_count++;
+			old_power_status = new_power_status;
+		}
+		if(power_plug_count == 3)
+		{
+			debug_mode_set();
+			return DEBUG_MODE;
+		}
+
+		//detect power key status for fel mode
+		power_key = axp_probe_key();
+		if(power_key > 0) 
+		{
+			count ++;
+		}
+		if(count == 3)
+		{
+			printf("you can loosen the key to update now\n");
+			//jump to fel
+			return FEL_MODE;
+		}
+
+		
+		__msdelay(KEY_DELAY_EACH_TIME);
+		if(time_tick > KEY_MAX_COUNT_GO_ON)
+		{
+			printf("time out\n");
+			break;
+		}
+	}
+	printf("key not pressed anymore\n");
+	return NORMAL_MODE;
+}
+//Justin 20170801 Porting for BPI-M2U-M2B  End
 
 /*
  * Read a key  when user pressed a  key
  * return :     0:normal  -1: jump to fel
  */
 //we have pass the uart input from boot0, then we do not need to detect it
+//Justin 20170801 Porting for BPI-M2U-M2B  Start
 int check_update_key(void)
 {
 	int key_value = 0;
-
+	gd->key_pressd_value = 0;
+	
 	if(uboot_spare_head.boot_data.work_mode != WORK_MODE_BOOT)
 	{
 	    return 0;
 	}
+	sunxi_key_init();
+	printf("run key detect\n");
+	sunxi_key_read();
+	__msdelay(10);
 
 #ifdef BPI
 #else
 	key_value = bpi_board_version();  	
 	printf("bpi_board_version: [%x]\n", key_value);
 #endif
+	key_value = sunxi_key_read();  	
+	if(key_value < 0)             				
+	{
+		printf("no key found\n");
+		return 0;
+	}
+	//save key value for  test other boot mode, ex recovery or fastboot.
+	gd->key_pressd_value = key_value;
 	if(check_config_fel_key(key_value) == FEL_MODE)
 	{
 		return -1;
 	}
-
+	if(check_user_mode() == FEL_MODE)
+	{
+		return -1;
+	}
 	return 0;
 }
 #else
@@ -165,6 +182,7 @@ int check_update_key(void)
 
 #endif
 
+//Justin 20170801 Porting for BPI-M2U-M2B  End
 /*
  * Read a char from serial when call board_init_f
  *
