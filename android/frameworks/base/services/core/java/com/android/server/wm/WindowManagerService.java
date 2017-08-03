@@ -4021,7 +4021,12 @@ public class WindowManagerService extends IWindowManager.Stub
     boolean updateOrientationFromAppTokensLocked(boolean inTransaction) {
         long ident = Binder.clearCallingIdentity();
         try {
-            int req = getOrientationLocked();
+
+            //Justin 20170803 Porting for Display always LANDSCAPE End
+            //int req = getOrientationLocked();
+              int req = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
+            //Justin 20170803 Porting for Display always LANDSCAPE End
+
             if (req != mForcedAppOrientation) {
                 mForcedAppOrientation = req;
                 //send a message to Policy indicating orientation change to take
