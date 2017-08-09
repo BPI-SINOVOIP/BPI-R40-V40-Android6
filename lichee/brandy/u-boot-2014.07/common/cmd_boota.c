@@ -265,7 +265,11 @@ void update_bootargs(void)
 	}
 	//serial info
 	str = getenv("sunxi_serial");
-	sprintf(tmpbuf," androidboot.serialno=%s",str);
+        //Justin 20170809 Porting for andrid ID Starts
+	//sprintf(tmpbuf," androidboot.serialno=%s",str);
+	  sprintf(tmpbuf," androidboot.serialno=%s","20170810");
+        //Justin 20170809 Porting for andrid ID End
+
 	strcat(cmdline,tmpbuf);
 	//harware info
 	sprintf(tmpbuf," androidboot.hardware=%s",board_hardware_info());
