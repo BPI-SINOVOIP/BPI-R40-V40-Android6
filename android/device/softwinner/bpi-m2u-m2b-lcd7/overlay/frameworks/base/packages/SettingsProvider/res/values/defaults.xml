@@ -20,7 +20,9 @@
     <!-- set backup service, required by gms-->
     <string name="def_backup_transport">com.google.android.backup/.BackupTransportService</string>
     <!-- set default location mode to network-->
-    <string name="def_location_providers_allowed" translatable="false">network</string>
+     <!-- Justin Porting 20170810 for GMS Location Start-->
+    <string name="def_location_providers_allowed" translatable="false"></string>
+     <!-- Justin Porting 20170810 for GMS Location Ends-->
 
     <!-- CAPTIVE_PORTAL_SERVER -->
     <string name="def_captive_portal_server">status.eqoe.cn</string>
