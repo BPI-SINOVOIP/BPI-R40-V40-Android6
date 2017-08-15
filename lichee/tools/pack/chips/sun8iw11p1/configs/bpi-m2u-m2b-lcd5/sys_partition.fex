@@ -64,7 +64,7 @@ size = 16384
 ;------------------------------>mmcblk0p8/nande
 [partition]
     name         = data
-    size         = 3145728
+    size         = 6291456
     user_type    = 0x8000
 
 ;------------------------------>mmcblk0p9/nandf
