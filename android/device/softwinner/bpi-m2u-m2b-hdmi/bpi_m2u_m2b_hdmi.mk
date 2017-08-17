@@ -108,7 +108,8 @@ PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_AAPT_CONFIG := tvdpi xlarge hdpi xhdpi large
 PRODUCT_AAPT_PREF_CONFIG := tvdpi
 
-#$(call inherit-product-if-exists, vendor/google/products/gms_base.mk)
+# BPI-M2_Ultra-Berry supports GMS
+$(call inherit-product-if-exists, vendor/google/products/gms_base.mk)
 
 PRODUCT_BRAND := BPI
 PRODUCT_NAME := bpi_m2u_m2b_hdmi
