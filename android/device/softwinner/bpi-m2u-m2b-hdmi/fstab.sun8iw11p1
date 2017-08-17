@@ -17,4 +17,5 @@
 /devices/soc/1c19000.ohci1-controller/usb*	auto                auto    defaults                                                                wait,check,voldmanaged=usb:auto
 /devices/soc/1c1c000.ehci2-controller/usb*	auto                auto    defaults                                                                wait,check,voldmanaged=usb:auto
 /devices/soc/1c1c000.ohci2-controller/usb*	auto                auto    defaults                                                                wait,check,voldmanaged=usb:auto
+/devices/soc/sata/ata1/host0/*                  auto                auto    defaults                                                                wait,check,voldmanaged=sata:auto
 /dev/block/zram0                             none           swap    defaults                                                                zramsize=268435456
