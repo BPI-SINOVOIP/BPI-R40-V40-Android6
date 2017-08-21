@@ -4023,8 +4023,8 @@ public class WindowManagerService extends IWindowManager.Stub
         try {
 
             //Justin 20170803 Porting for Display always LANDSCAPE End
-            //int req = getOrientationLocked();
-              int req = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
+            int req = getOrientationLocked();
+            //int req = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
             //Justin 20170803 Porting for Display always LANDSCAPE End
 
             if (req != mForcedAppOrientation) {
