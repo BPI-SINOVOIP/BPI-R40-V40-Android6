@@ -427,8 +427,10 @@ static struct regval_list sensor_qsxga_regs[] = { //qsxga: 2592*1936
 	//power down
 	//{0x3008,0x42},
 	//pll and clock setting
-	{0x3820,0x40},
-	{0x3821,0x06},
+        //Justin 20171115 Porting for BPI-M2U-M2B camera Start
+	//{0x3820,0x40},
+	//{0x3821,0x06},
+        //Justin 20171115 Porting for BPI-M2U-M2B camera Start
 	{0x3034,0x18},
 #ifndef FPGA_VER
 	{0x3035,0x21},
@@ -697,8 +699,10 @@ static struct regval_list sensor_sxga_regs[] = { //SXGA: 1280*960
 	//capture 1.3Mega 7.5fps
 	//power down
 	//  {0x3008,0x42},
-	{0x3820,0x40},
-	{0x3821,0x06},
+        //Justin 20171115 Porting for BPI-M2U-M2B camera Start
+	//{0x3820,0x40},
+	//{0x3821,0x06},
+        //Justin 20171115 Porting for BPI-M2U-M2B camera Start
 	//pll and clock setting
 	{0x3034,0x18},
 #ifndef FPGA_VER
@@ -896,8 +900,10 @@ static struct regval_list sensor_xga_regs[] = { //XGA: 1024*768
 static struct regval_list sensor_1080p_regs[] = { //1080: 1920*1080
 	//power down
 	//  {0x3008,0x42},
-	{0x3820,0x40},
-	{0x3821,0x06},
+        //Justin 20171115 Porting for BPI-M2U-M2B camera Start
+	//{0x3820,0x40},
+	//{0x3821,0x06},
+        //Justin 20171115 Porting for BPI-M2U-M2B camera Start
 	//pll and clock setting
 	{0x3034,0x18},
 #ifndef FPGA_VER
@@ -990,8 +996,10 @@ static struct regval_list sensor_1080p_regs[] = { //1080: 1920*1080
 static struct regval_list sensor_720p_regs[] = { //1280*720
 	//  //power down
 	//  {0x3008,0x42},
-	{0x3820,0x41},
-	{0x3821,0x07},
+        //Justin 20171115 Porting for BPI-M2U-M2B camera Start
+	//{0x3820,0x41},
+	//{0x3821,0x07},
+        //Justin 20171115 Porting for BPI-M2U-M2B camera End
 	//  //pll and clock setting
 	{0x3034,0x18},
 #ifndef FPGA_VER
@@ -1180,8 +1188,10 @@ static struct regval_list sensor_vga_regs[] = { //VGA:  640*480
 	//640x480
 	//power down
 	//  {0x3008,0x42},
-	{0x3820,0x41},
-	{0x3821,0x07},
+        //Justin 20171115 Porting for BPI-M2U-M2B camera Start
+	//{0x3820,0x41},
+	//{0x3821,0x07},
+        //Justin 20171115 Porting for BPI-M2U-M2B camera End
 	//  //pll and clock setting
 	{0x3034,0x1a},
 #ifndef FPGA_VER

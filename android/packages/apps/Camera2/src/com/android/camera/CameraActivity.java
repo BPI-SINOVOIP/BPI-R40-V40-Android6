@@ -1678,8 +1678,10 @@ public class CameraActivity extends QuickActivity
             registerReceiver(mShutdownReceiver, filter_user_unlock);
         }
 
-	registerReceiver(mBatteryInfoReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
-	mDidRegister = true;
+        //Justin 20171115 Porting for BPI-M2U-M2B camera Start
+	//registerReceiver(mBatteryInfoReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+	//mDidRegister = true;
+        //Justin 20171115 Porting for BPI-M2U-M2B camera Start
 
         mCameraAppUI = new CameraAppUI(this,
                 (MainActivityLayout) findViewById(R.id.activity_root_view), isCaptureIntent());
@@ -2255,8 +2257,10 @@ public class CameraActivity extends QuickActivity
         }
 
 	if (mDidRegister) {
-		unregisterReceiver(mBatteryInfoReceiver);
-		mDidRegister = false;
+                //Justin 20171115 Porting for BPI-M2U-M2B camera Start
+		//unregisterReceiver(mBatteryInfoReceiver);
+		//mDidRegister = false;
+               //Justin 20171115 Porting for BPI-M2U-M2B camera End
 	}
 
         // Ensure anything that checks for "isPaused" returns true.

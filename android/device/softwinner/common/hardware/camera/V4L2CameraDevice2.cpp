@@ -2978,8 +2978,10 @@ int V4L2CameraDevice::getSensorType()
 
 	if (-1 == ioctl (mCameraFd, VIDIOC_QUERYCTRL, &qc_ctrl))
 	{
-		LOGE("query sensor type ctrl failed");
-		return -1;
+                //Justin 20171115 Porting for BPI-M2U-M2B camera Start
+		//LOGE("query sensor type ctrl failed");
+		//return -1;
+                //Justin 20171115 Porting for BPI-M2U-M2B camera End
 	}
 	ret = ioctl(mCameraFd, VIDIOC_G_CTRL, &ctrl);
 	return ctrl.value;

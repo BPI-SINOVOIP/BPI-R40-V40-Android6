@@ -1448,8 +1448,12 @@
 				csi0_dev0_isp_used      = <1>;
 				csi0_dev0_fmt           = <0>;
 				csi0_dev0_stby_mode     = <0>;
-				csi0_dev0_vflip         = <0>;
-				csi0_dev0_hflip         = <0>;
+                                //Justin 20171115 Porting for BPI-M2U-M2B camera Start
+				//csi0_dev0_vflip         = <0>;
+				//csi0_dev0_hflip         = <0>;
+                                csi0_dev0_vflip         = <1>;
+				csi0_dev0_hflip         = <1>;
+                                //Justin 20171115 Porting for BPI-M2U-M2B camera End
 				csi0_dev0_iovdd         = "iovdd-csi";
 				csi0_dev0_iovdd_vol     = <2800000>;
 				csi0_dev0_avdd          = "avdd-csi";
@@ -1464,7 +1468,10 @@
 				csi0_dev0_flash_en	= <>;
 				csi0_dev0_flash_mode	= <>;
 				csi0_dev0_af_pwdn	= <>;
-				csi0_dev0_act_used      = <0>;
+                                //Justin 20171115 Porting for BPI-M2U-M2B camera Start
+                                //csi0_dev0_act_used      = <0>;
+				csi0_dev0_act_used      = <1>;
+                                //Justin 20171115 Porting for BPI-M2U-M2B camera End
 				csi0_dev0_act_name      = "ad5820_act";
 				csi0_dev0_act_slave	= <0x18>;
 				status	= "okay";
