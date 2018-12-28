@@ -64,7 +64,8 @@ on fs
     
 # use automatic detecttion insmod ctp & gsensor driver
 #    insmod /system/vendor/modules/sw-device.ko
-    insmod /system/vendor/modules/ft5x_ts.ko
+#    insmod /system/vendor/modules/ft5x_ts.ko
+     insmod /vendor/modules/gt9xxnew_ts.ko
     
 # GPS
 #    chmod 777 /system/bin/glgps
