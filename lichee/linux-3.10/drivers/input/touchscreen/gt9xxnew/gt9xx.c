@@ -1,4 +1,4 @@
-/* drivers/input/touchscreen/gt9xx.c
+/* drivers/input/touchscreen/9xx.c
  * 
  * 2010 - 2013 Goodix Technology.
  * 
@@ -1774,7 +1774,7 @@ static s32 gtp_init_panel(struct goodix_ts_data *ts)
 		} else if (!strcmp(config_info.name,"gt9147_bpi")){
             sensor_id = 4;
             dprintk(DEBUG_INIT,"gt9xx:sensor_id = %d\n",sensor_id);
-		} else if (!strcmp(config_info.name,"gt9271_p2")){
+		} else if (!strcmp(config_info.name,"bpi_lcd7")){
             sensor_id = 5;
             dprintk(DEBUG_INIT,"gt9xx:sensor_id = %d\n",sensor_id);
 		 } else {		    
@@ -2831,7 +2831,7 @@ static int goodix_ts_probe(struct i2c_client *client, const struct i2c_device_id
 	pm_runtime_set_active(&client->dev);
 	pm_runtime_get(&client->dev);
 	pm_runtime_enable(&client->dev);
-    
+        fb_unregister_client(&ts->fb_notif); 
 #if GTP_CREATE_WR_NODE
     init_wr_node(client);
 #endif
