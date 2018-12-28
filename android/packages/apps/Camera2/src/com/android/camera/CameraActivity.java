@@ -299,6 +299,9 @@ public class CameraActivity extends QuickActivity
     			*/
     			if(Level < 5)
     			{
+
+				//Justin Porting 20181228 for disable low battery alarm Start
+				/*
 				Runnable runnable_close_camera = new Runnable() {
 				@Override
 				public void run() {
@@ -306,7 +309,9 @@ public class CameraActivity extends QuickActivity
 						CameraActivity.this.finish();
 					}
 				};
-				showLocationDialog();    
+				showLocationDialog();  
+				*/  
+				//Justin Porting 20181228 for disable low battery alarm End
     			}
     			/*
     			*Logic:
